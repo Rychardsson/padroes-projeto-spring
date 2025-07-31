@@ -9,6 +9,7 @@ import one.digitalinnovation.gof.model.Cliente;
 import one.digitalinnovation.gof.model.ClienteRepository;
 import one.digitalinnovation.gof.model.Endereco;
 import one.digitalinnovation.gof.model.EnderecoRepository;
+import one.digitalinnovation.gof.observer.ClienteSubject;
 import one.digitalinnovation.gof.service.ClienteService;
 import one.digitalinnovation.gof.service.ViaCepService;
 
@@ -17,7 +18,10 @@ import one.digitalinnovation.gof.service.ViaCepService;
  * injetada pelo Spring (via {@link Autowired}). Com isso, como essa classe é um
  * {@link Service}, ela será tratada como um <b>Singleton</b>.
  * 
+ * Agora também integra o padrão <b>Observer</b> para notificações.
+ * 
  * @author falvojr
+ * @author Rychardsson
  */
 @Service
 public class ClienteServiceImpl implements ClienteService {
@@ -29,6 +33,8 @@ public class ClienteServiceImpl implements ClienteService {
 	private EnderecoRepository enderecoRepository;
 	@Autowired
 	private ViaCepService viaCepService;
+	@Autowired
+	private ClienteSubject clienteSubject;
 	
 	// Strategy: Implementar os métodos definidos na interface.
 	// Facade: Abstrair integrações com subsistemas, provendo uma interface simples.
