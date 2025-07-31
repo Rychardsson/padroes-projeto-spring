@@ -5,11 +5,13 @@ Repositório com as implementações dos padrões de projeto explorados no Lab "
 ## 🎯 Padrões de Projeto Implementados
 
 ### Padrões Originais
+
 - **Singleton** - Gerenciado pelo Spring IoC Container
 - **Strategy/Repository** - Interface de serviços e repositórios Spring Data
 - **Facade** - Controladores REST abstraindo complexidade
 
 ### Padrões Adicionados
+
 - **Builder** - Construção fluente de objetos Cliente
 - **Observer** - Sistema de notificações para eventos de cliente
 - **Command** - Operações como objetos com suporte a undo/redo
@@ -30,11 +32,13 @@ Repositório com as implementações dos padrões de projeto explorados no Lab "
 ## 📋 Funcionalidades
 
 ### Operações CRUD Básicas
+
 - Criar, ler, atualizar e deletar clientes
 - Integração automática com API ViaCEP para endereços
 - Validação de dados
 
 ### Funcionalidades Avançadas
+
 - **Sistema de Notificações**: Logs e emails automáticos
 - **Histórico de Comandos**: Undo/Redo de operações
 - **Validação Flexível**: Diferentes tipos de validadores
@@ -44,17 +48,20 @@ Repositório com as implementações dos padrões de projeto explorados no Lab "
 ## 🔧 Como Executar
 
 1. **Clone o repositório:**
+
 ```bash
 git clone https://github.com/Rychardsson/padroes-projeto-spring.git
 cd padroes-projeto-spring
 ```
 
 2. **Execute a aplicação:**
+
 ```bash
 ./mvnw spring-boot:run
 ```
 
 3. **Acesse a aplicação:**
+
 - API: `http://localhost:8080`
 - H2 Console: `http://localhost:8080/h2-console`
 - Swagger (se disponível): `http://localhost:8080/swagger-ui.html`
@@ -62,11 +69,13 @@ cd padroes-projeto-spring
 ## 📚 Documentação
 
 Para exemplos detalhados de uso e explicação dos padrões, consulte:
+
 - [PADROES_PROJETO.md](PADROES_PROJETO.md) - Documentação completa dos padrões
 
 ## 🛠️ Endpoints da API
 
 ### Endpoints Básicos
+
 - `GET /clientes` - Listar todos os clientes
 - `GET /clientes/{id}` - Buscar cliente por ID
 - `POST /clientes` - Criar cliente
@@ -74,6 +83,7 @@ Para exemplos detalhados de uso e explicação dos padrões, consulte:
 - `DELETE /clientes/{id}` - Remover cliente
 
 ### Endpoints Avançados (Demonstração dos Padrões)
+
 - `POST /clientes-avancado/builder` - Builder Pattern
 - `POST /clientes-avancado/command` - Command Pattern
 - `POST /clientes-avancado/undo` - Desfazer comando
@@ -83,20 +93,25 @@ Para exemplos detalhados de uso e explicação dos padrões, consulte:
 ## 💡 Destaques da Implementação
 
 ### 1. Arquitetura Modular
+
 Cada padrão foi implementado em seu próprio package, facilitando manutenção e compreensão.
 
 ### 2. Integração Seamless
+
 Os padrões trabalham juntos naturalmente através da injeção de dependência do Spring.
 
 ### 3. Exemplos Práticos
+
 Cada padrão resolve um problema real no domínio de gestão de clientes.
 
 ### 4. Observabilidade
+
 Sistema completo de logs e notificações para acompanhar as operações.
 
 ## 🎓 Valor Educacional
 
 Este projeto demonstra:
+
 - Como aplicar padrões do GoF em aplicações reais
 - Integração de múltiplos padrões em um sistema coeso
 - Uso das abstrações do Spring Framework
@@ -105,6 +120,7 @@ Este projeto demonstra:
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para:
+
 - Implementar novos padrões
 - Melhorar os existentes
 - Adicionar testes
