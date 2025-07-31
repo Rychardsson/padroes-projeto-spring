@@ -1,6 +1,7 @@
 package one.digitalinnovation.gof.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,7 @@ import one.digitalinnovation.gof.service.ClienteService;
 public class ClienteRestController {
 
 	@Autowired
+	@Qualifier("clienteServiceImpl")
 	private ClienteService clienteService;
 
 	@GetMapping
