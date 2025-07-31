@@ -55,14 +55,19 @@ public class ClienteServiceImpl implements ClienteService {
 	@Override
 	public void inserir(Cliente cliente) {
 		salvarClienteComCep(cliente);
+		// Observer: Notifica sobre a criação do cliente
+		clienteSubject.notifyClienteCriado(cliente);
 	}
 
 	@Override
 	public void atualizar(Long id, Cliente cliente) {
 		// Buscar Cliente por ID, caso exista:
-		Optional<Cliente> clienteBd = clienteRepository.findById(id);
-		if (clienteBd.isPresent()) {
+		Optional<Cliente> clienteBdOpt = clienteRepository.findById(id);
+		if (clienteBdOpt.isPresent()) {
+			Cliente clienteAntigo = clienteBdOpt.get();
 			salvarClienteComCep(cliente);
+			// Observer: Notifica sobre a atualização do cliente
+			clienteSubject.notifyClienteAtualizado(clienteAntigo, cliente);
 		}
 	}
 
@@ -70,6 +75,8 @@ public class ClienteServiceImpl implements ClienteService {
 	public void deletar(Long id) {
 		// Deletar Cliente por ID.
 		clienteRepository.deleteById(id);
+		// Observer: Notifica sobre a remoção do cliente
+		clienteSubject.notifyClienteRemovido(id);
 	}
 
 	private void salvarClienteComCep(Cliente cliente) {
